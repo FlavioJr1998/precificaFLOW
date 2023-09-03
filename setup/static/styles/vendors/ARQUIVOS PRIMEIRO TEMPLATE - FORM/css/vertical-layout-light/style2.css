@@ -1,0 +1,100 @@
+.custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Escolher";
+}
+
+.upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.upload-text {
+    font-size: 0.875rem;
+    color: #999;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+/* Hide the default file input */
+.custom-file-input {
+    display: none;
+}
+
+#item_id {
+    text-transform: uppercase;
+}
+
+#item_id::placeholder {
+    text-transform: none;
+}
+
+.select2-search__field {
+    width: 100% !important;
+}
+
+.tag-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.tag {
+    width: 100%;
+    white-space: nowrap;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.tag.selected {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.tag.selected .delete-tag {
+    display: inline-block;
+    padding-left: 4px;
+    cursor: pointer;
+}
+
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.selected-tags .tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.selected-tag {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin: 4px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.delete-tag {
+    padding-left: 4px;
+    cursor: pointer;
+}
