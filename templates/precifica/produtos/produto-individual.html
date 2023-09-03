@@ -1,0 +1,484 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block titulo_pagina %}Produto Acabado - Nº{% endblock titulo_pagina %}
+{% block conteudo %}
+<div class="tab-content tab-content-basic">
+  <div class="tab-pane fade show active" id="produtos" role="tabpanel" aria-labelledby="produtos">
+    <div class="mb-5 mt-2">
+      <h1 class="text-center">Produto acabado Nº</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 mr-auto">
+        <p class="statistics-title" style="font-size: 20px;">Custo:</p>
+        <h1 class="rate-percentage" style="font-size: 70px;">R$ 500,00</h1>
+      </div>
+      <div class="col-sm-6 m-auto">
+        <div class="statistics-details d-flex align-items-center justify-content-between">
+          <div>
+            <p class="statistics-title">Itens utilizados</p>
+            <h3 class="rate-percentage">18</h3>
+            <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>R$ 8,00</span></p>
+          </div>
+          <div>
+            <p class="statistics-title">Pessoas envolvidas</p>
+            <h3 class="rate-percentage">4</h3>
+            <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>R$ 20,00</span></p>
+          </div>
+          <div>
+            <p class="statistics-title">Processo de produção</p>
+            <h3 class="rate-percentage">AC093</h3>
+            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>15.5%</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ficha técnica -->
+    <div class="row">
+      <div class="col-lg-8 d-flex flex-column">
+        <div class="col-lg-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Ficha técnica</h4>
+              <p class="card-description">
+              </p>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>
+                        Item
+                      </th>
+                      <th>
+                        Nome do item
+                      </th>
+                      <th>
+                        Quantidade
+                      </th>
+                      <th>
+                        Custo do item
+                      </th>
+                      <th>
+                        Rendimento
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Sarja Rosa Minimal
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-success" role="progressbar" style="width: 25%"
+                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 77.99
+                      </td>
+                      <td>
+                        May 15, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Messsy Adam
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-danger" role="progressbar" style="width: 75%"
+                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $245.30
+                      </td>
+                      <td>
+                        July 1, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Linha
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-warning" role="progressbar" style="width: 90%"
+                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $138.00
+                      </td>
+                      <td>
+                        Apr 12, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Fio
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 77.99
+                      </td>
+                      <td>
+                        May 15, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Sola
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-danger" role="progressbar" style="width: 35%"
+                            aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 160.25
+                      </td>
+                      <td>
+                        May 03, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Cursel
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 65%"
+                            aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 123.21
+                      </td>
+                      <td>
+                        April 05, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Bico
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-warning" role="progressbar" style="width: 20%"
+                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 150.00
+                      </td>
+                      <td>
+                        June 16, 2015
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráfico de pizza - Formulação de preço -->
+      <div class="col-lg-4 grid-margin stretch-card">
+        <div class="card card-rounded">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4 class="card-title card-title-dash">Formação do preço de produto</h4>
+                </div>
+                <canvas class="my-auto" id="doughnutChart" height="200"></canvas>
+                <div id="doughnut-chart-legend" class="mt-5 text-center"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rastreamento de processos -->
+    <div class="row">
+      <div class="col-lg-8 grid-margin stretch-card">
+        <div class="card card-rounded">
+          <div class="card-body">
+            <div class="d-sm-flex justify-content-between align-items-start">
+              <div>
+                <h4 class="card-title card-title-dash">Processo de fabricação: Processo XTS04</h4>
+                <div class="input-group card-subtitle card-subtitle-dash">
+                  <input type="text" class="form-control border-0 border-bottom"
+                    placeholder="Pesquisar">
+                  <button class="btn border-0" type="button">
+                    <i class="icon-search"></i>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive mt-1">
+              <table class="table select-table">
+                <thead>
+                  <tr>
+                    <th>Nome do processo</th>
+                    <th>Tempo</th>
+                    <th>Máquina</th>
+                    <th>Depreciação</th>
+                    <th>Funcionário</th>
+                    <th>Mão de obra</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex ">
+                        <div>
+                          <h6>Enfesto</h6>
+                          <p>Etapa 1</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h6>20:10.0</h6>
+                    </td>
+                    <td>
+                      <div>
+                        <h6> Não se aplica </h6>
+                    </td>
+                    <td>
+                      <h6> Não se aplica </h6>
+                    </td>
+                    <td>
+                      <h6>Maria</h6>
+                    </td>
+                    <td>
+                      <h6> R$ 4,29 </h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex ">
+                        <div>
+                          <h6>Formagem</h6>
+                          <p>Etapa 2</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h6:>14:22.1</h6:>
+                    </td>
+                    <td>
+                      <div>
+                        <h6> Formadora </h6>
+                    </td>
+                    <td>
+                      <h6> R$ 1,68 </h6>
+                    </td>
+                    <td>
+                      <h6>José</h6>
+                    </td>
+                    <td>
+                      <h6> R$ 2,99 </h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex ">
+                        <div>
+                          <h6>Corte</h6>
+                          <p>Etapa 3</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h6>05:12.0</h6>
+                    </td>
+                    <td>
+                      <div>
+                        <h6> Corte </h6>
+                    </td>
+                    <td>
+                      <h6> R$ 1,91 </h6>
+                    </td>
+                    <td>
+                      <h6>Joyce</h6>
+                    </td>
+                    <td>
+                      <h6> R$ 1,08 </h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex ">
+                        <div>
+                          <h6>Costura 1</h6>
+                          <p>Etapa 4</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h6>07:33.0</h6>
+                    </td>
+                    <td>
+                      <div>
+                        <h6> Overlock </h6>
+                    </td>
+                    <td>
+                      <h6> R$ 1,70 </h6>
+                    </td>
+                    <td>
+                      <h6> Ana </h6>
+                    </td>
+                    <td>
+                      <h6> R$ 1,57 </h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex ">
+                        <div>
+                          <h6>Costura 2</h6>
+                          <p>Etapa 5</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h6>05:11.3</h6>
+                    </td>
+                    <td>
+                      <div>
+                        <h6> Reta </h6>
+                    </td>
+                    <td>
+                      <h6> R$ 0,17 </h6>
+                    </td>
+                    <td>
+                      <h6> Miriam </h6>
+                    </td>
+                    <td>
+                      <h6> R$ 1,08 </h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex ">
+                        <div>
+                          <h6>Embalar</h6>
+                          <p>Etapa 6</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h6>01:10.1</h6>
+                    </td>
+                    <td>
+                      <div>
+                        <h6> Não se aplica </h6>
+                    </td>
+                    <td>
+                      <h6> Não se aplica </h6>
+                    </td>
+                    <td>
+                      <h6>Julia</h6>
+                    </td>
+                    <td>
+                      <h6> R$ 0,24 </h6>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="container mt-5">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                  <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 d-flex flex-column">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card card-rounded">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <h4 class="card-title card-title-dash">Rateio de custos</h4>
+                    </div>
+                    <div>
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0"
+                          type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false"> Filtrar </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                          <h6 class="dropdown-header">Filtro 1 (padrão)</h6>
+                          <a class="dropdown-item" href="#">Filtro 2</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3">
+                    <canvas id="costBreakdownChart" width="400" height="400"></canvas>
+                    <!-- Ajuste a largura e altura conforme necessário -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 d-flex flex-column">
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card card-body">
+              <h2 class="mb-4">Tamanhos</h2>
+              <span class="badge badge-primary">22-32</span>
+              <span class="badge badge-secondary" style="color: black">33-45</span>
+              <span class="badge badge-success">34-42</span>
+              <span class="badge badge-info">P</span>
+              <span class="badge badge-warning">M</span>
+              <span class="badge badge-danger">G</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock conteudo %}
+

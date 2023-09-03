@@ -1,94 +1,179 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
+  <ul class="nav">
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'index'%}">
               <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item nav-category">UI Elements</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-title">Dashboard inicial</span>
+          </a>
+      </li>
+      <li class="nav-item nav-category">Gerenciamento</li>
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#gerenciamento_produtos" aria-expanded="false"
+              aria-controls="gerenciamento_produtos">
               <i class="menu-icon mdi mdi-floor-plan"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i> 
-            </a>
-            <div class="collapse" id="ui-basic">
+              <span class="menu-title">Produtos</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="gerenciamento_produtos">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                  <li class="nav-item"> <a class="nav-link"
+                      href="{% url 'index'%}">Dashboard</a></li>
+                  <li class="nav-item"> <a class="nav-link"
+                          href="{% url 'produto_individual'%}">Consulta de produto</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link"
+                      href="../../../pages/forms/basic_elements.html">Cadastro de produtos</a>
+              </li>
               </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">Forms and Datas</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+          </div>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#gerenciamento_itens" aria-expanded="false"
+              aria-controls="gerenciamento_itens">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span class="menu-title">Itens</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="gerenciamento_itens">
+              <ul class="nav flex-column sub-menu">                                
+                  <li class="nav-item"> <a class="nav-link"
+                          href="#">Cadastro de item</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link"
+                      href="{% url 'item_indivdual'%}">Consulta de item</a>
+              </li>
+              </ul>
+          </div>
+      </li>
+      
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#gerenciamento_processos" aria-expanded="false"
+              aria-controls="gerenciamento_processos">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span class="menu-title">Processos</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="gerenciamento_processos">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link"
+                      href="#">Cadastro de processos</a></li>
+                  <li class="nav-item"> <a class="nav-link"
+                          href="#">Consulta de processos</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+
+      <li class="nav-item nav-category">Cadastros auxiliares</li>
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#colaboradores" aria-expanded="false"
+              aria-controls="colaboradores">
               <i class="menu-icon mdi mdi-card-text-outline"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Colaboradores</span>
               <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
+          </a>
+          <div class="collapse" id="colaboradores">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                  <li class="nav-item"><a class="nav-link"
+                          href="#">Cadastro de colaboradores</a>
+                  </li>
+
               </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+          </div>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#maquinarios" aria-expanded="false"
+              aria-controls="maquinarios">
               <i class="menu-icon mdi mdi-chart-line"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Maquinários</span>
               <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
+          </a>
+          <div class="collapse" id="maquinarios">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
+                  <li class="nav-item"> <a class="nav-link"
+                          href="#">Cadastro de maquinários</a></li>
               </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+          </div>
+      </li>
+
+      <li class="nav-item nav-category">Rateio de custos</li>
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#gastos_fixos" aria-expanded="false"
+              aria-controls="gastos_fixos">
               <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Gastos fixos</span>
               <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
+          </a>
+          <div class="collapse" id="gastos_fixos">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+                  <li class="nav-item"> <a class="nav-link"
+                          href="#">Cadastros de gastos fixos</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link"
+                      href="../../../pages/tables/basic-table.html">Consulta de gastos</a>
+              </li>
               </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+          </div>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#gastos_variaveis" aria-expanded="false"
+              aria-controls="gastos_variaveis">
+              <i class="menu-icon mdi mdi-table"></i>
+              <span class="menu-title">Gastos variáveis</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="gastos_variaveis">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link"
+                          href="#">Cadastros de gastos variáveis</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link"
+                      href="../../../pages/tables/basic-table.html">Consulta de gastos</a>
+              </li>
+              </ul>
+          </div>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#despeas_indiretas" aria-expanded="false"
+              aria-controls="despeas_indiretas">
               <i class="menu-icon mdi mdi-layers-outline"></i>
-              <span class="menu-title">Icons</span>
+              <span class="menu-title">Despesas indiretas</span>
               <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
+          </a>
+          <div class="collapse" id="despeas_indiretas">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../../pages/icons/mdi.html">Cadastro de despesas indiretas</a></li>
               </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">pages</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="menu-icon mdi mdi-account-circle-outline"></i>
-              <span class="menu-title">User Pages</span>
+          </div>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#metodo_rateio" aria-expanded="false"
+              aria-controls="metodo_rateio">
+              <i class="menu-icon mdi mdi-layers-outline"></i>
+              <span class="menu-title">Método de rateio</span>
               <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
+          </a>
+          <div class="collapse" id="metodo_rateio">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="../../../pages/icons/mdi.html">Gerenciamento de rateio de custos</a></li>
               </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">help</li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
+          </div>
+      </li>
+
+      
+      <li class="nav-item nav-category">Ajuda</li>
+      <li class="nav-item">
+          <a class="nav-link"
+              href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
               <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+              <span class="menu-title">Documentação</span>
+          </a>
+      </li>
+
+  </ul>
+</nav>
