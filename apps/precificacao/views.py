@@ -9,3 +9,6 @@ def produto_individual( request ):
 
 def item_indivdual( request ):
     return render( request, "precifica/itens/item_individual_comprado.html")
+
+def dashboard_inicial( request ):
+    return render( request, "precifica/rateio/dashboard_inicial.html")

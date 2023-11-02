@@ -1,0 +1,21 @@
+{% extends 'shared/modal/base_modal.html' %}
+{% load static %}
+
+{% comment %} CABEÇALHO MODAL {% endcomment %}
+{% block titulo_modal %}
+    Detalhes Custo
+{% endblock titulo_modal %}
+
+{% comment %} CONTEUDO MODAL {% endcomment %}
+{% block conteudo %}
+    <p><strong>Tempo de Produção (Processo de produção)</strong></p>
+    <p><strong>Custo de Matéria Prima (Ficha técnica)</strong></p>
+    <p><strong>Custo de Mão de Obra (Processos)</strong></p>
+    <p><strong>Depreciação (Processos)</strong></p>
+    <p><strong>Rateio (Tempo de produção x custo hora)</strong></p>
+{% endblock conteudo %}
+
+{% comment %} FOOTER MODAL {% endcomment %}
+{% block botoes %}
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+{% endblock botoes %}

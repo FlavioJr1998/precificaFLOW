@@ -1,0 +1,21 @@
+{% extends 'shared/modal/base_modal.html' %}
+{% load static %}
+
+{% comment %} CABEÇALHO MODAL {% endcomment %}
+{% block titulo_modal %}
+    Detalhes Preço Venda
+{% endblock titulo_modal %}
+
+{% comment %} CONTEUDO MODAL {% endcomment %}
+{% block conteudo %}
+    <p><strong>Margem de lucro</strong></p>
+    <p><strong>Imposto</strong></p>
+    <p><strong>Custo de Mão de Obra (Processos)</strong></p>
+    <p><strong>Potencial de desconto</strong></p>
+    <p><strong>Comissão de venda</strong></p>
+{% endblock conteudo %}
+
+{% comment %} FOOTER MODAL {% endcomment %}
+{% block botoes %}
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+{% endblock botoes %}
