@@ -1,0 +1,784 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block titulo_pagina %}PrecificaFlow-Formação Preço{% endblock titulo_pagina %}
+{% block conteudo %}
+
+<div class="home-tab">
+    <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+        
+        <div>
+            <div class="btn-wrapper">
+                <a href="#" class="btn btn-otline-dark align-items-center"><i
+                        class="icon-share"></i> Compartilhar
+                </a>
+                <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i>
+                    Imprimir </a>
+                <a href="#" class="btn btn-primary text-white me-0"><i
+                        class="icon-download"></i> Exportar </a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content tab-content-basic">
+        <div class="tab-pane fade show active" id="produtos" role="tabpanel"
+            aria-labelledby="produtos">
+            <div class="mb-5">
+                <h1 class="text-center">Rateio de custos</h1>
+            </div>
+
+            <!-- Ficha técnica -->
+            <div class="row">
+
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card card-rounded">
+                        <div class="card-body">
+                            <h4 class="card-title">Custos variáveis</h4>
+                            <h5 class="mb-4">Marketing</h5>
+
+                            <form class="forms-sample">
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="aluguel">Agência de marketing</label>
+                                        <input type="number" class="form-control"
+                                            id="marketing" placeholder="marketing">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="agua_esgoto">Hospedagem</label>
+                                        <input type="number" class="form-control"
+                                            id="hospedagem"
+                                            placeholder="Hospedagem de sites">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="influenciadores">Influenciadores</label>
+                                        <input type="number" class="form-control" id="iptu"
+                                            placeholder="Influencers">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="anuncios">Anúncios</label>
+                                        <input type="number" class="form-control"
+                                            id="anuncios" placeholder="Tráfego de anúncios">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    
+
+                                    <div class="form-group col-md-6">
+                                        <label for="fotos">Fotos</label>
+                                        <input type="number" class="form-control" id="fotos"
+                                            placeholder="Criação de fotos e imagens">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="patrocinio">Patrocínio</label>
+                                        <input type="number" class="form-control"
+                                            id="patrocinio" placeholder="patrocinio">
+                                    </div>
+
+                                </div>
+
+                                <h5 class="mb-4">Comercial</h5>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="credito">Consulta de crédito</label>
+                                        <input type="number" class="form-control"
+                                            id="credito" placeholder="Consultas de crédito">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="frete">Frete de vendas</label>
+                                        <input type="number" class="form-control" id="frete"
+                                            placeholder="Custo com frete de mercadorias">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="amostras_e_brindes">Amostras e
+                                            brindes</label>
+                                        <input type="number" class="form-control"
+                                            id="brindes" placeholder="Amostras e brindes">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="auxilio">Auxílio de vendas</label>
+                                        <input type="number" class="form-control"
+                                            id="auxilio" placeholder="Auxílio de vendas">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="reposicao">Troca e reposição</label>
+                                        <input type="number" class="form-control"
+                                            id="reposicao"
+                                            placeholder="Trocas e reposição de peças">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="expedicao">Caixas expedição</label>
+                                        <input type="number" class="form-control"
+                                            id="expedicao" placeholder="expedicao">
+                                    </div>
+                                </div>
+
+                                <h5 class="mb-4">Despesas financeiras</h5>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="despeas_juridicas">Custos e taxas
+                                            jurídicas</label>
+                                        <input type="number" class="form-control"
+                                            id="despeas_juridicas"
+                                            placeholder="Despesas jurídicas">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="alvara">Alvará</label>
+                                        <input type="number" class="form-control"
+                                            id="alvara" placeholder="Alvarás e licenças">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="tarifa_bancaria">Tarifa bancária</label>
+                                        <input type="number" class="form-control"
+                                            id="tarifas" placeholder="Tarifas bancárias">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="juros">Juros e empréstimos</label>
+                                        <input type="number" class="form-control" id="juros"
+                                            placeholder="Juros e empréstimos bancários">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="cartoes">Taxas cartões</label>
+                                        <input type="number" class="form-control"
+                                            id="cartoes" placeholder="Taxas com cartões">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="boletos">Boletos</label>
+                                        <input type="number" class="form-control"
+                                            id="boletos"
+                                            placeholder="Taxas em processamento de boletos">
+                                    </div>
+                                </div>
+
+                                <h5 class="mb-4">Peças e equipamentos</h5>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="manutencao">Manutenção predial</label>
+                                        <input type="number" class="form-control"
+                                            id="manutencao"
+                                            placeholder="Custos com manutenção predial">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="uso_consumo">Material de uso e
+                                            consumo</label>
+                                        <input type="number" class="form-control"
+                                            id="uso_consumo"
+                                            placeholder="Material de uso e consumo">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="pecas_equipamentos">Peças e
+                                            equipamentos</label>
+                                        <input type="number" class="form-control"
+                                            id="pecas_equipamentos"
+                                            placeholder="Peças e equipamentos">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="manutencao_maquinarios">Manutenção de
+                                            maquinários</label>
+                                        <input type="number" class="form-control"
+                                            id="manutencao_maquinarios"
+                                            placeholder="Custo de manutenção de maquinários">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="manutencao_veicular">Manutenção
+                                            veicular</label>
+                                        <input type="number" class="form-control"
+                                            id="manutencao_veicular"
+                                            placeholder="Custos de manutenção veicular">
+                                    </div>
+                                </div>
+
+                                <h5 class="mb-4">Fornecedores</h5>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="frete_compras">Frete de compras</label>
+                                        <input type="number" class="form-control"
+                                            id="frete_compras"
+                                            placeholder="Custos com frete de compras">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="viagens">Viagens</label>
+                                        <input type="number" class="form-control"
+                                            id="viagens" placeholder="Custos com viagens">
+                                    </div>
+                                </div>
+
+                                <button type="submit"
+                                    class="btn btn-primary text-white me-2">Submit</button>
+                                <button class="btn btn-light">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informações do produto -->
+                <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card card-rounded">
+                        <div class="card-body">
+                            <h4 class="card-title">Custos fixos</h4>
+                            <h5 class="mb-4">Instalação</h5>
+
+                            <form class="forms-sample">
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="aluguel">Aluguel (valor mensal)</label>
+                                        <input type="number" class="form-control"
+                                            id="aluguel" placeholder="Aluguel">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="agua_esgoto">Água e esgoto</label>
+                                        <input type="number" class="form-control"
+                                            id="agua_esgoto" placeholder="Água e esgoto">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="iptu">IPTU</label>
+                                        <input type="number" class="form-control" id="iptu"
+                                            placeholder="IPTU">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="energia">Energia elétrica</label>
+                                        <input type="number" class="form-control"
+                                            id="energia" placeholder="Energia elétrica">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="internet">Internet</label>
+                                        <input type="number" class="form-control"
+                                            id="internet" placeholder="internet">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="energia">Telefones</label>
+                                        <input type="number" class="form-control"
+                                            id="telefones" placeholder="Telefones">
+                                    </div>
+                                </div>
+
+                                <h5 class="mb-4">Assistências</h5>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="contabilidade">Contabilidade</label>
+                                        <input type="number" class="form-control"
+                                            id="contabilidade"
+                                            placeholder="Honorários contábeis">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="juridico">Jurídico</label>
+                                        <input type="number" class="form-control"
+                                            id="juridico"
+                                            placeholder="Honorários de advocacia">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="consultoria">Consultoria</label>
+                                        <input type="number" class="form-control"
+                                            id="consultoria" placeholder="Consultoria">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="energia">Associação comercial</label>
+                                        <input type="number" class="form-control"
+                                            id="energia" placeholder="Energia elétrica">
+                                    </div>
+                                </div>
+
+                                <h5 class="mb-4">Materiais</h5>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="escritorio">Escritório</label>
+                                        <input type="number" class="form-control"
+                                            id="escritorio"
+                                            placeholder="Custo com materiais escritório">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="informatica">Informática</label>
+                                        <input type="number" class="form-control"
+                                            id="informatica"
+                                            placeholder="Custo de materiais de informaática">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="copa_cozinha">Copa e cozinha</label>
+                                        <input type="number" class="form-control"
+                                            id="copa_cozinha"
+                                            placeholder="Custo com materiais de cozinha">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="informatica">Informática</label>
+                                        <input type="number" class="form-control"
+                                            id="informatica"
+                                            placeholder="Custo de materiais de informaática">
+                                    </div>
+                                </div>
+                                <button type="submit"
+                                    class="btn btn-primary text-white me-2">Submit</button>
+                                <button class="btn btn-light">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 grid-margin stretch-card">
+                    <div class="card card-rounded">
+                        <div class="card-body">
+                            <h4 class="card-title">Despesas indiretas</h4>
+                            <h5 class="mb-4">Mão de obra indireta</h5>
+
+                            <form class="forms-sample">
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label
+                                            for="dep_administrativo">Administrativo</label>
+                                        <input type="number" class="form-control"
+                                            id="dep_administrativo"
+                                            placeholder="Custos com pessoal de departamento administrativo">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="dep_comercial">Comercial</label>
+                                        <input type="number" class="form-control"
+                                            id="dep_comercial"
+                                            placeholder="Custos com pessoal de departamento comercial">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="dep_comercial">Financeiro</label>
+                                        <input type="number" class="form-control"
+                                            id="dep_comercial"
+                                            placeholder="Custos com pessoal de departamento comercial">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="dep_marketing">Marketing</label>
+                                        <input type="number" class="form-control"
+                                            id="dep_marketing"
+                                            placeholder="Custos com pessoal de departamento marketing">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="dep_limpeza">Limpeza</label>
+                                        <input type="number" class="form-control"
+                                            id="dep_limpeza"
+                                            placeholder="Custos com pessoal de departamento de limpeza">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="dep_rh">RH</label>
+                                        <input type="number" class="form-control"
+                                            id="dep_rh"
+                                            placeholder="Custos com pessoal de departamento do RH">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="dep_almoxarifado">Almoxarifado</label>
+                                        <input type="number" class="form-control"
+                                            id="dep_almoxarifado"
+                                            placeholder="Custos com pessoal de departamento de almoxarifado">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="dep_producao">Gerente de
+                                            produção</label>
+                                        <input type="number" class="form-control"
+                                            id="dep_producao"
+                                            placeholder="Custos com pessoal de departamento de produção">
+                                    </div>
+                                </div>                                                                  
+
+                                    <h5 class="mb-4">Equipe de desenvolvimento</h5>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="dev_instalacoes">Instalações</label>
+                                            <input type="number" class="form-control"
+                                                id="dev_instalacoes"
+                                                placeholder="Custos com instalações para a equipe de desenvolvimento">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="dev_pessoal">Mão de obra</label>
+                                            <input type="number" class="form-control"
+                                                id="dev_pessoal"
+                                                placeholder="Custos com mão de obra da equipe de desenvolvimento">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="dev_escritorio">Material de
+                                                escritórios</label>
+                                            <input type="number" class="form-control"
+                                                id="escritorio"
+                                                placeholder="Custos com material de escritório">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="energia">Outros</label>
+                                            <input type="number" class="form-control"
+                                                id="energia" placeholder="Energia elétrica">
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-4">Materiais</h5>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="escritorio">Escritório</label>
+                                            <input type="number" class="form-control"
+                                                id="escritorio"
+                                                placeholder="Custo com materiais escritório">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="informatica">Informática</label>
+                                            <input type="number" class="form-control"
+                                                id="informatica"
+                                                placeholder="Custo de materiais de informaática">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="copa_cozinha">Copa e cozinha</label>
+                                            <input type="number" class="form-control"
+                                                id="copa_cozinha"
+                                                placeholder="Custo com materiais de cozinha">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="informatica">Informática</label>
+                                            <input type="number" class="form-control"
+                                                id="informatica"
+                                                placeholder="Custo de materiais de informaática">
+                                        </div>
+                                    </div>
+
+                                    <h5 class="mb-4">Pró-labore</h5>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="donos">Donos</label>
+                                            <input type="number" class="form-control"
+                                                id="donos"
+                                                placeholder="Participação dos donos">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <label for="socios">Sócios</label>
+                                            <input type="number" class="form-control"
+                                                id="socios"
+                                                placeholder="Participação dos sócios">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label for="pj">PJ's</label>
+                                            <input type="number" class="form-control"
+                                                id="pj" placeholder="PLR dos prestadores">
+                                        </div>
+
+                                    </div>
+
+                                    <button type="submit"
+                                        class="btn btn-primary text-white me-2">Submit</button>
+                                    <button class="btn btn-light">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Rastreamento de processos -->
+        <div class="row">
+            <div class="col-lg-8 grid-margin stretch-card">
+                <div class="card card-rounded">
+                    <div class="card-body">
+                        <div class="d-sm-flex justify-content-between align-items-start">
+                            <div>
+                                <h4 class="card-title card-title-dash">Processo de
+                                    fabricação: Processo XTS04</h4>
+                                <div class="input-group card-subtitle card-subtitle-dash">
+                                    <input type="text"
+                                        class="form-control border-0 border-bottom"
+                                        placeholder="Pesquisar">
+                                    <button class="btn border-0" type="button">
+                                        <i class="icon-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive mt-1">
+                            <table class="table select-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nome do processo</th>
+                                        <th>Tempo</th>
+                                        <th>Máquina</th>
+                                        <th>Depreciação</th>
+                                        <th>Funcionário</th>
+                                        <th>Mão de obra</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex ">
+                                                <div>
+                                                    <h6>Enfesto</h6>
+                                                    <p>Etapa 1</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>20:10.0</h6>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6> Não se aplica </h6>
+                                        </td>
+                                        <td>
+                                            <h6> Não se aplica </h6>
+                                        </td>
+                                        <td>
+                                            <h6>Maria</h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 4,29 </h6>
+                                        </td>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex ">
+                                                <div>
+                                                    <h6>Formagem</h6>
+                                                    <p>Etapa 2</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6:>14:22.1</h6:>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6> Formadora </h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 1,68 </h6>
+                                        </td>
+                                        <td>
+                                            <h6>José</h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 2,99 </h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex ">
+                                                <div>
+                                                    <h6>Corte</h6>
+                                                    <p>Etapa 3</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>05:12.0</h6>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6> Corte </h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 1,91 </h6>
+                                        </td>
+                                        <td>
+                                            <h6>Joyce</h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 1,08 </h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex ">
+                                                <div>
+                                                    <h6>Costura 1</h6>
+                                                    <p>Etapa 4</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>07:33.0</h6>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6> Overlock </h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 1,70 </h6>
+                                        </td>
+                                        <td>
+                                            <h6> Ana </h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 1,57 </h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex ">
+                                                <div>
+                                                    <h6>Costura 2</h6>
+                                                    <p>Etapa 5</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>05:11.3</h6>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6> Reta </h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 0,17 </h6>
+                                        </td>
+                                        <td>
+                                            <h6> Miriam </h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 1,08 </h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex ">
+                                                <div>
+                                                    <h6>Embalar</h6>
+                                                    <p>Etapa 6</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h6>01:10.1</h6>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6> Não se aplica </h6>
+                                        </td>
+                                        <td>
+                                            <h6> Não se aplica </h6>
+                                        </td>
+                                        <td>
+                                            <h6>Julia</h6>
+                                        </td>
+                                        <td>
+                                            <h6> R$ 0,24 </h6>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="container mt-5">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link"
+                                            href="#">Anterior</a></li>
+                                    <li class="page-item active" aria-current="page"><a
+                                            class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="#">Próximo</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gráfico de pizza - Formulação de preço -->
+            <div class="col-lg-4 grid-margin stretch-card">
+                <div class="card card-rounded">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div
+                                    class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4 class="card-title card-title-dash">Formação do preço
+                                        de produto</h4>
+                                </div>
+                                <canvas class="my-auto" id="doughnutChart"
+                                    height="200"></canvas>
+                                <div id="doughnut-chart-legend" class="mt-5 text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock conteudo %}

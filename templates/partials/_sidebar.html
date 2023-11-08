@@ -17,12 +17,12 @@
           <div class="collapse" id="gerenciamento_produtos">
               <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link"
-                      href="{% url 'index'%}">Dashboard</a></li>
+                      href="{% url 'dashboard_inicial_produtos'%}">Dashboard</a></li>
                   <li class="nav-item"> <a class="nav-link"
                           href="{% url 'produto_individual'%}">Consulta de produto</a>
                   </li>
                   <li class="nav-item"> <a class="nav-link"
-                      href="../../../pages/forms/basic_elements.html">Cadastro de produtos</a>
+                      href="{% url 'cadastro_produto'%}">Cadastro de produtos</a>
               </li>
               </ul>
           </div>
@@ -112,7 +112,7 @@
                           href="#">Cadastros de gastos fixos</a>
                   </li>
                   <li class="nav-item"> <a class="nav-link"
-                      href="../../../pages/tables/basic-table.html">Consulta de gastos</a>
+                      href="#">Consulta de gastos</a>
               </li>
               </ul>
           </div>
@@ -131,7 +131,7 @@
                           href="#">Cadastros de gastos variáveis</a>
                   </li>
                   <li class="nav-item"> <a class="nav-link"
-                      href="../../../pages/tables/basic-table.html">Consulta de gastos</a>
+                      href="#">Consulta de gastos</a>
               </li>
               </ul>
           </div>
@@ -146,7 +146,7 @@
           </a>
           <div class="collapse" id="despeas_indiretas">
               <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="../../../pages/icons/mdi.html">Cadastro de despesas indiretas</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Cadastro de despesas indiretas</a></li>
               </ul>
           </div>
       </li>
@@ -160,7 +160,7 @@
           </a>
           <div class="collapse" id="metodo_rateio">
               <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="../../../pages/icons/mdi.html">Gerenciamento de rateio de custos</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'rateio_custos'%}">Gerenciamento de rateio de custos</a></li>
               </ul>
           </div>
       </li>

@@ -1,0 +1,685 @@
+{% extends 'shared/base2.html' %}
+{% load static %}
+{% block titulo_pagina %}PrecificaFlow-Formação Preço{% endblock titulo_pagina %}
+{% block conteudo %}
+
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Cadastro de produto</h4>
+            <p class="card-description">
+              Dados básicos do produto
+            </p>
+            <form class="forms-sample">
+
+              <div class="row">
+
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label for="item_id">Informe o código do item</label>
+                    <input type="text" class="form-control" id="item_id" placeholder="Código do item">
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    <label for="item_nome">Informe o nome do item</label>
+                    <input type="text" class="form-control" id="item_nome" placeholder="Nome do item">
+                  </div>
+
+                  <div class="form-group col-md-4 mx-auto">
+                    <label for="customFile" class="upload-box">
+                      <div class="upload-icon">
+                        <i class="fas fa-plus-circle"></i>
+                      </div>
+                      <div class="upload-text">
+                        Incluir Imagem
+                      </div>
+                      <input type="file" class="custom-file-input" id="customFile">
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="select_categoria">Categoria</label>
+                    <select class="form-control js-example-basic-single" id="select_categoria">
+                      <option selected>Escolha...</option>
+                      <option value="1">Opção 1</option>
+                      <option value="2">Opção 2</option>
+                      <option value="3">Opção 3</option>
+                      <!-- Adicione mais opções conforme necessário -->
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label for="material_principal">Material principal</label>
+                    <select class="form-control js-example-basic-single" id="material_principal">
+                      <option value="escolha">Escolha...</option>
+                      <option value="opcao1">Opção 1</option>
+                      <option value="opcao2">Opção 2</option>
+                      <option value="opcao3">Opção 3</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <h5> Tamanhos: </h5>
+                  <div class="form-group">
+                    <div class="tag-container">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="available-tags">
+                            <div class="tag" data-category="Tamanhos">PP</div>
+                            <div class="tag" data-category="Tamanhos">P</div>
+                            <div class="tag" data-category="Tamanhos">M</div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="available-tags">
+                            <div class="tag" data-category="Tamanhos">G</div>
+                            <div class="tag" data-category="Tamanhos">GG</div>
+                            <div class="tag" data-category="Tamanhos">XG</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="selected-tags" data-category="Tamanhos"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <h5>Cores:</h5>
+                  <div class="form-group">
+                    <div class="tag-container">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="available-tags">
+                            <div class="tag" data-category="Cores">Azul</div>
+                            <div class="tag" data-category="Cores">Verde</div>
+                            <div class="tag" data-category="Cores">Vermelho</div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="available-tags">
+                            <div class="tag" data-category="Cores">Amarelo</div>
+                            <div class="tag" data-category="Cores">Preto</div>
+                            <div class="tag" data-category="Cores">Laranja</div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="available-tags">
+                            <div class="tag" data-category="Cores">Violeta</div>
+                            <div class="tag" data-category="Cores">Branco</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="selected-tags" data-category="Cores"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="descricao_tecnica">Descrição técnica</label>
+                <input type="text" class="form-control" id="descricao_tecnica" placeholder="Descrição técnica">
+              </div>
+
+              <button type="submit" class="btn btn-primary me-2">Submit</button>
+              <button class="btn btn-light">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Cadastro de processo</h4>
+            <p class="card-description">
+              Vincular o produto com um processo de produção específico
+            </p>
+
+            <table class="table" id="tabelaDestino">
+              <thead>
+                <!-- Cabeçalho da tabela de destino -->
+              </thead>
+              <tbody>
+                <!-- Linhas da tabela de destino serão adicionadas dinamicamente aqui -->
+              </tbody>
+            </table>
+            
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exemploModal">
+              Abrir Modal
+            </button>
+
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exemploModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" style="width: 80%;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content ml-auto" style="width: 100vh">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Tabela de Exemplo</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Selecionar</th>
+                    <th>ID do Processo</th>
+                    <th>Nome do Processo</th>
+                    <th>Responsável</th>
+                    <th>Tempo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>Processo A</td>
+                    <td><input type="text" name="responsavel_processo_1" class="form-control"
+                        placeholder="Informe o responsável"></td>
+                    <td>
+                      <div class="input-group">
+                        <input type="number" name="tempo_processo_1_minutos" class="form-control" placeholder="MM"
+                          maxlength="2">
+                        <div class="input-group-prepend input-group-append">
+                          <span class="input-group-text">:</span>
+                        </div>
+                        <input type="number" name="tempo_processo_1_segundos" class="form-control"
+                          placeholder="SS" maxlength="2">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>2</td>
+                    <td>Processo B</td>
+                    <td><input type="text" name="responsavel_processo_2" class="form-control"
+                        placeholder="Informe o responsável" required></td>
+                    <td>
+                      <div class="input-group">
+                        <input type="number" name="tempo_processo_2_minutos" class="form-control" placeholder="MM"
+                          maxlength="2" required>
+                        <div class="input-group-prepend input-group-append">
+                          <span class="input-group-text">:</span>
+                        </div>
+                        <input type="number" name="tempo_processo_2_segundos" class="form-control"
+                          placeholder="SS" maxlength="2" required>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>3</td>
+                    <td>Processo C</td>
+                    <td><input type="text" name="responsavel_processo_3" class="form-control"
+                        placeholder="Informe o responsável" required></td>
+                    <td>
+                      <div class="input-group">
+                        <input type="number" name="tempo_processo_3_minutos" class="form-control" placeholder="MM"
+                          maxlength="2" required>
+                        <div class="input-group-prepend input-group-append">
+                          <span class="input-group-text">:</span>
+                        </div>
+                        <input type="number" name="tempo_processo_3_segundos" class="form-control"
+                          placeholder="SS" maxlength="2" required>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary" id="incluirBtn">Incluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Cadastro de Ficha técnica de Matérias-Primas</h4>
+            <p class="card-description">
+              Selecione o item para adicioná-lo à ficha técnica do produto
+            </p>
+            <form class="forms-sample">
+
+              <div class="form-group">
+                <button class="btn btn-primary mb-0 me-0 text-white" type="button" data-bs-toggle="modal"
+                  data-bs-target="#listagemItens" aria-expanded="false"> Listagem de itens </button>
+              </div>
+              <div class="col-lg-12 d-flex flex-column">
+                <div class="grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Ficha técnica</h4>
+                      <p class="card-description">
+                      </p>
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Código do item</th>
+                              <th>Nome do item</th>
+                              <th>Preço</th>
+                              <th>UM</th>
+                              <th>Rendimento</th>
+                              <th>Quantidade</th>
+                              <th>Custo</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>001</td>
+                              <td>Produto A</td>
+                              <td>R$ 25.00</td>
+                              <td>Peça</td>
+                              <td>5</td>
+                              <td>10</td>
+                              <td>R$ 250.00</td>
+                            </tr>
+                            <tr>
+                              <td>002</td>
+                              <td>Produto B</td>
+                              <td>R$ 18.50</td>
+                              <td>Caixa</td>
+                              <td>20</td>
+                              <td>30</td>
+                              <td>R$ 555.00</td>
+                            </tr>
+                            <tr>
+                              <td>003</td>
+                              <td>Produto C</td>
+                              <td>R$ 30.75</td>
+                              <td>Peça</td>
+                              <td>10</td>
+                              <td>15</td>
+                              <td>R$ 461.25</td>
+                            </tr>
+                            <tr>
+                              <td>004</td>
+                              <td>Produto D</td>
+                              <td>R$ 12.00</td>
+                              <td>Caixa</td>
+                              <td>15</td>
+                              <td>25</td>
+                              <td>R$ 300.00</td>
+                            </tr>
+                            <tr>
+                              <td>005</td>
+                              <td>Produto E</td>
+                              <td>R$ 40.25</td>
+                              <td>Peça</td>
+                              <td>8</td>
+                              <td>12</td>
+                              <td>R$ 483.00</td>
+                            </tr>
+                            <tr>
+                              <td>006</td>
+                              <td>Produto F</td>
+                              <td>R$ 22.80</td>
+                              <td>Caixa</td>
+                              <td>30</td>
+                              <td>40</td>
+                              <td>R$ 912.00</td>
+                            </tr>
+                            <tr>
+                              <td>007</td>
+                              <td>Produto G</td>
+                              <td>R$ 17.99</td>
+                              <td>Peça</td>
+                              <td>12</td>
+                              <td>20</td>
+                              <td>R$ 359.80</td>
+                            </tr>
+                            <tr>
+                              <td>008</td>
+                              <td>Produto H</td>
+                              <td>R$ 29.50</td>
+                              <td>Caixa</td>
+                              <td>25</td>
+                              <td>35</td>
+                              <td>R$ 1032.50</td>
+                            </tr>
+                            <tr>
+                              <td colspan="6" class="total-row">Total</td>
+                              <td class="total-row">R$ 3000.00</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary me-2">Submit</button>
+              <button class="btn btn-light">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Cadastro auxiliar</h4>
+            <p class="card-description">
+              Talvez o cadastro de rendimentos, maquinários ou algo do tipo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Modal listagem de itens -->
+      <div class="modal fade" id="listagemItens" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+
+              <div class="search-container">
+                <form class="search-form" action="#">
+                  <div class="search-input">
+                    <i class="fas fa-search"></i>
+                    <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+                    <i class="fas fa-filter filter-icon"></i>
+                  </div>
+                  <div class="filter-form">
+                    <div class="row">
+                      <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Código do item">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nome do item">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Preço">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="UM">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <input type="number" class="form-control" placeholder="Custo mínimo">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <input type="number" class="form-control" placeholder="Custo máximo">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <button type="button" class="btn btn-primary">Pesquisar</button>
+                      </div>
+                      <div class="col-md-6">
+                        <button type="button" class="btn btn-secondary">Cancelar</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+            <div class="modal-body">
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>
+                        Item
+                      </th>
+                      <th>
+                        Nome do item
+                      </th>
+                      <th>
+                        Quantidade
+                      </th>
+                      <th>
+                        Custo do item
+                      </th>
+                      <th>
+                        Rendimento
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Sarja Rosa Minimal
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-success" role="progressbar" style="width: 25%"
+                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 77.99
+                      </td>
+                      <td>
+                        May 15, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Messsy Adam
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-danger" role="progressbar" style="width: 75%"
+                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $245.30
+                      </td>
+                      <td>
+                        July 1, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Linha
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-warning" role="progressbar" style="width: 90%"
+                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $138.00
+                      </td>
+                      <td>
+                        Apr 12, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Fio
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"
+                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 77.99
+                      </td>
+                      <td>
+                        May 15, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Sola
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-danger" role="progressbar" style="width: 35%"
+                            aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 160.25
+                      </td>
+                      <td>
+                        May 03, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Cursel
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 65%"
+                            aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 123.21
+                      </td>
+                      <td>
+                        April 05, 2015
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-1">
+                        <img src="../../../images\file-icons\512\new-item-vetor.png" alt="image" />
+                      </td>
+                      <td>
+                        Bico
+                      </td>
+                      <td>
+                        <div class="progress">
+                          <div class="progress-bar bg-warning" role="progressbar" style="width: 20%"
+                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </td>
+                      <td>
+                        $ 150.00
+                      </td>
+                      <td>
+                        June 16, 2015
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-3">
+                <form class="forms-sample">
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label>Informe o rendimento do item</label>
+                      <input type="text" class="form-control" id="item_id" placeholder="Rendimento">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label>Informe a quantidade utilizada do item</label>
+                      <input type="text" class="form-control" id="item_id" placeholder="Quantidade">
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Custom js for this page-->
+  <script src="../../js/file-upload.js"></script>
+  <script src="../../js/typeahead.js"></script>
+  <script src="../../js/select2.js"></script>
+  <script src="../../js/tags-list.js"></script>
+  <!-- End custom js for this page-->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <script>
+    $('.datepicker').datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true
+    });
+
+    $(document).ready(function () {
+      $(".filter-icon").click(function () {
+        $(".filter-form").slideToggle("slow");
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Seletor do botão "INCLUIR"
+      var incluirBtn = document.getElementById("incluirBtn");
+
+      // Manipulador de evento para o botão "INCLUIR"
+      incluirBtn.addEventListener("click", function () {
+        // Obtenha os valores dos campos do modal
+        var processoNome = document.querySelector("input[name='responsavel_processo_1']").value;
+        var responsavel = document.querySelector("input[name='responsavel_processo_1']").value;
+        var minutos = document.querySelector("input[name='tempo_processo_1_minutos']").value;
+        var segundos = document.querySelector("input[name='tempo_processo_1_segundos']").value;
+
+        // Se o checkbox estiver marcado
+        if (document.querySelector("input[type='checkbox']").checked) {
+          // Crie uma nova linha na tabela de destino
+          var table = document.getElementById("tabelaDestino").getElementsByTagName('tbody')[0];
+          var newRow = table.insertRow(table.rows.length);
+
+          // Crie células para cada informação
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+          var cell4 = newRow.insertCell(3);
+
+          // Preencha as células com as informações
+          cell1.innerHTML = processoNome;
+          cell2.innerHTML = responsavel;
+          cell3.innerHTML = minutos + ":" + segundos;
+          cell4.innerHTML = "<button class='btn btn-danger'>Excluir</button>";
+        }
+      });
+    });
+  </script>
+
+{% endblock conteudo %}

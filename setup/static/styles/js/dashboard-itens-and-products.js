@@ -602,386 +602,137 @@
       });
       document.getElementById('marketing-overview-legend').innerHTML = marketingOverviewDark.generateLegend();
     }
+    if ($("#doughnutChart").length) {
+      var doughnutChartCanvas = $("#doughnutChart").get(0).getContext("2d");
+      var doughnutPieData = {
+        datasets: [{
+          data: [40, 20, 30, 10],
+          backgroundColor: [
+            "#1F3BB3",
+            "#FDD0C7",
+            "#52CDFF",
+            "#81DADA"
+          ],
+          borderColor: [
+            "#1F3BB3",
+            "#FDD0C7",
+            "#52CDFF",
+            "#81DADA"
+          ],
+        }],
+
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: [
+          '6 meses s/ revisão',
+          'Lucro baixo',
+          'Potencial prejuízo',
+          'AVG',
+        ]
+      };
+      
+      var doughnutPieOptions = {
+        cutoutPercentage: 50,
+        animationEasing: "easeOutBounce",
+        animateRotate: true,
+        animateScale: false,
+        responsive: true,
+        maintainAspectRatio: true,
+        showScale: true,
+        legend: false,
+        legendCallback: function (chart) {
+          var text = [];
+          text.push('<div class="chartjs-legend"><ul class="justify-content-center">');
+          for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
+            text.push('<li><span style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '">');
+            text.push('</span>');
+            if (chart.data.labels[i]) {
+              text.push(chart.data.labels[i]);
+            }
+            text.push('</li>');
+          }
+          text.push('</div></ul>');
+          return text.join("");
+        },
+
+        layout: {
+          padding: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0
+          }
+        },
+        tooltips: {
+          callbacks: {
+            title: function (tooltipItem, data) {
+              return data['labels'][tooltipItem[0]['index']];
+            },
+            label: function (tooltipItem, data) {
+              return data['datasets'][0]['data'][tooltipItem['index']];
+            }
+          },
+
+          backgroundColor: '#fff',
+          titleFontSize: 14,
+          titleFontColor: '#0B0F32',
+          bodyFontColor: '#737F8B',
+          bodyFontSize: 11,
+          displayColors: false
+        }
+      };
+      var doughnutChart = new Chart(doughnutChartCanvas, {
+        type: 'doughnut',
+        data: doughnutPieData,
+        options: doughnutPieOptions
+      });
+      document.getElementById('doughnut-chart-legend').innerHTML = doughnutChart.generateLegend();
+    }
     
-    if ($("#doughnutChartPalmilha").length) {
-      var doughnutChartCanvas = $("#doughnutChartPalmilha").get(0).getContext("2d");
-      var doughnutPieData = {
+    if ($("#costBreakdownChart").length) {
+      var costBreakdownChart = document.getElementById("costBreakdownChart").getContext('2d');
+      var costBreakdownData = {
+        labels: ["Processo", "Matéria Prima", "Mão de Obra", "Distribuição", "Marketing"],
         datasets: [{
-          data: [80, 20],
-          backgroundColor: [
-            "#1F3BB3",
-            "#FDD0C7",
-          ],
-          borderColor: [
-            "#1F3BB3",
-            "#FDD0C7",
-          ],
-        }],
-
-        // These labels appear in the legend and in the tooltips when hovering different arcs
-        labels: [
-          'Outros itens',
-          'Palmilha Anatômica',
-        ]
-      };
-      var doughnutPieOptions = {
-        cutoutPercentage: 50,
-        animationEasing: "easeOutBounce",
-        animateRotate: true,
-        animateScale: false,
-        responsive: true,
-        maintainAspectRatio: true,
-        showScale: true,
-        legend: false,
-        legendCallback: function (chart) {
-          var text = [];
-          text.push('<div class="chartjs-legend"><ul class="justify-content-center">');
-          for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
-            text.push('<li><span style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '">');
-            text.push('</span>');
-            if (chart.data.labels[i]) {
-              text.push(chart.data.labels[i]);
-            }
-            text.push('</li>');
-          }
-          text.push('</div></ul>');
-          return text.join("");
-        },
-
-        layout: {
-          padding: {
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0
-          }
-        },
-        tooltips: {
-          callbacks: {
-            title: function (tooltipItem, data) {
-              return data['labels'][tooltipItem[0]['index']];
-            },
-            label: function (tooltipItem, data) {
-              return data['datasets'][0]['data'][tooltipItem['index']]+"%";
-            }
-          },
-
-          backgroundColor: '#fff',
-          titleFontSize: 14,
-          titleFontColor: '#0B0F32',
-          bodyFontColor: '#737F8B',
-          bodyFontSize: 11,
-          displayColors: false
-        }
-      };
-      var doughnutChart = new Chart(doughnutChartCanvas, {
-        type: 'doughnut',
-        data: doughnutPieData,
-        options: doughnutPieOptions
-      });
-
-      
-      document.getElementById('doughnut-chart-palmilha').innerHTML = doughnutChart.generateLegend();
-    }
-    if ($("#doughnutChartPalmilhaCustos").length) {
-      var doughnutChartCanvas = $("#doughnutChartPalmilhaCustos").get(0).getContext("2d");
-      var doughnutPieData = {
-        datasets: [{
-          data: [60, 40],
-          backgroundColor: [
-            "#4B0082",
-            "#FF8C00",
-          ],
-          borderColor: [
-            "#4B0082",
-            "#FF8C00",
-          ],
-        }],
-
-        // These labels appear in the legend and in the tooltips when hovering different arcs
-        labels: [
-          'Custos Processo Corte',
-          'Custos Processo Estampagem',
-        ]
-      };
-      var doughnutPieOptions = {
-        cutoutPercentage: 50,
-        animationEasing: "easeOutBounce",
-        animateRotate: true,
-        animateScale: false,
-        responsive: true,
-        maintainAspectRatio: true,
-        showScale: true,
-        legend: false,
-        legendCallback: function (chart) {
-          var text = [];
-          text.push('<div class="chartjs-legend"><ul class="justify-content-center">');
-          for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
-            text.push('<li><span style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '">');
-            text.push('</span>');
-            if (chart.data.labels[i]) {
-              text.push(chart.data.labels[i]);
-            }
-            text.push('</li>');
-          }
-          text.push('</div></ul>');
-          return text.join("");
-        },
-
-        layout: {
-          padding: {
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0
-          }
-        },
-        tooltips: {
-          callbacks: {
-            title: function (tooltipItem, data) {
-              return data['labels'][tooltipItem[0]['index']];
-            },
-            label: function (tooltipItem, data) {
-              return data['datasets'][0]['data'][tooltipItem['index']]+"%";
-            }
-          },
-
-          backgroundColor: '#fff',
-          titleFontSize: 14,
-          titleFontColor: '#0B0F32',
-          bodyFontColor: '#737F8B',
-          bodyFontSize: 11,
-          displayColors: false
-        }
-      };
-      var doughnutChart = new Chart(doughnutChartCanvas, {
-        type: 'doughnut',
-        data: doughnutPieData,
-        options: doughnutPieOptions
-      });
-
-      
-      document.getElementById('doughnut-chart-palmilha-custos').innerHTML = doughnutChart.generateLegend();
-    }
-
-    if ($("#doughnutChartEtiqueta").length) {
-      var doughnutChartCanvas = $("#doughnutChartEtiqueta").get(0).getContext("2d");
-      var doughnutPieData = {
-        datasets: [{
-          data: [90, 10],
-          backgroundColor: [
-            "#1F3BB3",
-            "#FDD0C7",
-          ],
-          borderColor: [
-            "#1F3BB3",
-            "#FDD0C7",
-          ],
-        }],
-
-        // These labels appear in the legend and in the tooltips when hovering different arcs
-        labels: [
-          'Outros itens',
-          'ETIQUETA T136',
-        ]
-      };
-      var doughnutPieOptions = {
-        cutoutPercentage: 50,
-        animationEasing: "easeOutBounce",
-        animateRotate: true,
-        animateScale: false,
-        responsive: true,
-        maintainAspectRatio: true,
-        showScale: true,
-        legend: false,
-        legendCallback: function (chart) {
-          var text = [];
-          text.push('<div class="chartjs-legend"><ul class="justify-content-center">');
-          for (var i = 0; i < chart.data.datasets[0].data.length; i++) {
-            text.push('<li><span style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '">');
-            text.push('</span>');
-            if (chart.data.labels[i]) {
-              text.push(chart.data.labels[i]);
-            }
-            text.push('</li>');
-          }
-          text.push('</div></ul>');
-          return text.join("");
-        },
-
-        layout: {
-          padding: {
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0
-          }
-        },
-        tooltips: {
-          callbacks: {
-            title: function (tooltipItem, data) {
-              return data['labels'][tooltipItem[0]['index']];
-            },
-            label: function (tooltipItem, data) {
-              return data['datasets'][0]['data'][tooltipItem['index']]+"%";
-            }
-          },
-
-          backgroundColor: '#fff',
-          titleFontSize: 14,
-          titleFontColor: '#0B0F32',
-          bodyFontColor: '#737F8B',
-          bodyFontSize: 11,
-          displayColors: false
-        }
-      };
-      var doughnutChart = new Chart(doughnutChartCanvas, {
-        type: 'doughnut',
-        data: doughnutPieData,
-        options: doughnutPieOptions
-      });
-
-      
-      document.getElementById('doughnut-chart-etiqueta').innerHTML = doughnutChart.generateLegend();
-    }
-
-    if ($("#leaveReportEtiqueta").length) {
-      var leaveReportChart = document.getElementById("leaveReportEtiqueta").getContext('2d');
-      var leaveReportData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-        datasets: [{
-          label: 'Last week',
-          data: [0.04, 0.04, 0.03, 0.03, 0.03, 0.04, 0.02, 0.02],
-          backgroundColor: "#52CDFF",
-          borderColor: [
-            '#52CDFF',
-          ],
-          borderWidth: 0,
-          fill: true, // 3: no fill
-
+          label: 'Custos',
+          data: [40, 25, 30, 15, 20], // Números fictícios representando os custos
+          backgroundColor: "rgba(82, 205, 255, 0.5)",
+          borderColor: "#52CDFF",
+          borderWidth: 2,
+          pointBackgroundColor: "#52CDFF",
+          pointBorderColor: "#ffffff",
+          pointHoverBackgroundColor: "#ffffff",
+          pointHoverBorderColor: "#52CDFF",
         }]
       };
-
-      var leaveReportOptions = {
+    
+      var costBreakdownOptions = {
         responsive: true,
         maintainAspectRatio: false,
-        scales: {
-          yAxes: [{
-            gridLines: {
-              display: true,
-              drawBorder: false,
-              color: "rgba(255,255,255,.05)",
-              zeroLineColor: "rgba(255,255,255,.05)",
-            },
-            ticks: {
-              beginAtZero: true,
-              autoSkip: true,
-              maxTicksLimit: 5,
-              fontSize: 10,
-              color: "#6B778C"
-            }
-          }],
-          xAxes: [{
-            barPercentage: 0.5,
-            gridLines: {
-              display: false,
-              drawBorder: false,
-            },
-            ticks: {
-              beginAtZero: false,
-              autoSkip: true,
-              maxTicksLimit: 7,
-              fontSize: 10,
-              color: "#6B778C"
-            }
-          }],
-        },
-        legend: false,
-
-        elements: {
-          line: {
-            tension: 0.4,
+        scale: {
+          angleLines: {
+            display: false
+          },
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 50,
+            stepSize: 10
           }
+        },
+        legend: {
+          display: false,
         },
         tooltips: {
           backgroundColor: 'rgba(31, 59, 179, 1)',
         }
-      }
-      var leaveReport = new Chart(leaveReportChart, {
-        type: 'line',
-        data: leaveReportData,
-        options: leaveReportOptions
-      });
-    }
-
-    if ($("#leaveReportPalmilha").length) {
-      var leaveReportChart = document.getElementById("leaveReportPalmilha").getContext('2d');
-      var leaveReportData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-        datasets: [{
-          label: 'Last week',
-          data: [0.33, 0.33, 0.33, 0.30, 0.30, 0.30, 0.26, 0.24],
-          backgroundColor: "#52CDFF",
-          borderColor: [
-            '#52CDFF',
-          ],
-          borderWidth: 0,
-          fill: true, // 3: no fill
-        }]
       };
-
-      var leaveReportOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          yAxes: [{
-            gridLines: {
-              display: true,
-              drawBorder: false,
-              color: "rgba(255,255,255,.05)",
-              zeroLineColor: "rgba(255,255,255,.05)",
-            },
-            ticks: {
-              beginAtZero: true,
-              autoSkip: true,
-              maxTicksLimit: 5,
-              fontSize: 10,
-              color: "#6B778C"
-            }
-          }],
-          xAxes: [{
-            barPercentage: 0.5,
-            gridLines: {
-              display: false,
-              drawBorder: false,
-            },
-            ticks: {
-              beginAtZero: false,
-              autoSkip: true,
-              maxTicksLimit: 7,
-              fontSize: 10,
-              color: "#6B778C"
-            }
-          }],
-        },
-        legend: false,
-
-        elements: {
-          line: {
-            tension: 0.4,
-          }
-        },
-        tooltips: {
-          backgroundColor: 'rgba(31, 59, 179, 1)',
-        }
-      }
-      var leaveReport = new Chart(leaveReportChart, {
-        type: 'line',
-        data: leaveReportData,
-        options: leaveReportOptions
+    
+      var costBreakdownChartInstance = new Chart(costBreakdownChart, {
+        type: 'radar',
+        data: costBreakdownData,
+        options: costBreakdownOptions
       });
     }
-
+    
     if ($("#leaveReport-dark").length) {
       var leaveReportChartDark = document.getElementById("leaveReport-dark").getContext('2d');
       var leaveReportDataDark = {

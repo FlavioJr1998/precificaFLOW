@@ -3,6 +3,7 @@
 }
 
 .upload-box {
+    width: 18vw;
     border: 2px dashed #ccc;
     border-radius: 10px;
     padding: 2rem;
@@ -11,12 +12,12 @@
 }
 
 .upload-icon {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #ccc;
 }
 
 .upload-text {
-    font-size: 0.875rem;
+    font-size: 1.175rem;
     color: #999;
     margin-top: 0.5rem;
     width: 100%;
@@ -63,7 +64,7 @@
 }
 
 .tag.selected .delete-tag {
-    display: inline-block;
+    display: block;
     padding-left: 4px;
     cursor: pointer;
 }
@@ -71,16 +72,17 @@
 .selected-tags {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 8px;
+    margin-left: 10px;
 }
 
 .selected-tags .tag {
-    display: inline-block;
+    display: block;
     padding: 5px 10px;
     margin: 5px;
     background-color: #f0f0f0;
     border-radius: 4px;
     font-size: 14px;
+    width: calc(33.33% - 10px);
 }
 
 .selected-tag {
@@ -97,4 +99,105 @@
 .delete-tag {
     padding-left: 4px;
     cursor: pointer;
+}
+
+.product-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.size-badge {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+.color-badge {
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Isso é importante para centralizar verticalmente */
+}
+
+.card label {
+    font-size: 1em;
+}
+
+table {
+    font-size: 1em;
+}
+
+.form-group {
+    font-size: 1em;
+}
+
+/* CSS personalizado */
+.total-row {
+    background-color: #484343;
+    font-weight: bold;
+    color: white;
+    border-top: 2px solid rgb(95, 93, 93);
+}
+
+/* CSS personalizado */
+.search-container {
+    position: relative;
+    width: 300px;
+    /* Defina a largura desejada para o contêiner */
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+}
+
+.filter-icon {
+    margin-left: 10px;
+    color: black;
+    cursor: pointer;
+}
+
+.filter-form {
+    display: none;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+    transition: top 0.3s ease-in-out;
+    /* Adiciona uma transição suave para a animação */
+}
+
+
+.filter-form input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.filter-icon.active+.filter-form {
+    display: block;
 }

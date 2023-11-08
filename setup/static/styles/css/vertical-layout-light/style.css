@@ -22493,7 +22493,7 @@ input:focus {
 
 /* Typography */
 body {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-family: "Manrope", sans-serif;
   font-weight: initial;
   line-height: normal;
@@ -24593,7 +24593,7 @@ code {
 .btn-light:hover,
 .btn-light:focus {
   background: #e2e2e2;
-  color: #ffffff;
+  color: black;
 }
 
 .btn-light.btn-social-icon-text {
